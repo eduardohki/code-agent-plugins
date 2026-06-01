@@ -1,0 +1,14 @@
+This repository is licensed under the MIT License (see LICENSE).
+
+The following third-party content is included under a different license.
+
+## shape-features skill
+
+Location: `plugins/engineering-practices/skills/shape-features/`
+
+Draws on the Dojo Consortium body of work on engineering practices,
+licensed under Creative Commons Attribution 4.0 International (CC BY 4.0).
+
+* Source:  https://github.com/devopsdojoconsortium/dojoconsortium.org
+* Docs:    https://dojoconsortium.org/docs/
+* License: https://creativecommons.org/licenses/by/4.0/

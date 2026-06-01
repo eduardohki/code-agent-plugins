@@ -1,0 +1,13 @@
+{
+  "name": "engineering-practices",
+  "version": "0.1.0",
+  "description": "Skills covering software engineering practices like requirements, BDD, work decomposition, and delivery flow.",
+  "keywords": ["requirements", "bdd", "user-stories", "story-slicing", "engineering-practices"],
+  "homepage": "https://github.com/eduardohki/code-agent-plugins",
+  "repository": "https://github.com/eduardohki/code-agent-plugins",
+  "license": "MIT",
+  "author": {
+    "name": "Eduardo Hernacki",
+    "email": "services@runlevel0.me"
+  }
+}

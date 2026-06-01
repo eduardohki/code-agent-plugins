@@ -1,0 +1,16 @@
+{
+  "name": "runlevel0",
+  "owner": {
+    "name": "Eduardo Hernacki",
+    "email": "services@runlevel0.me"
+  },
+  "plugins": [
+    {
+      "name": "engineering-practices",
+      "description": "Skills covering software engineering practices like requirements, BDD, work decomposition, and delivery flow.",
+      "source": "./plugins/engineering-practices",
+      "category": "development",
+      "license": "MIT"
+    }
+  ]
+}
