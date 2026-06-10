@@ -63,7 +63,7 @@ The "why" is the most important part. Anyone can memorize a list of do's and don
 
 ### Topic A: What good requirements look like
 
-Walk through the 10 characteristics from [what-good-looks-like.md](what-good-looks-like.md), in clusters of two or three per message with a check-in between clusters. For each one, give a brief concrete example.
+Walk through the 12 characteristics from [what-good-looks-like.md](what-good-looks-like.md), in clusters of two or three per message with a check-in between clusters. For each one, give a brief concrete example.
 
 Anchor with the multi-audience test: "A requirement is well-written when any consumer - product owner, developer, tester, AI agent - can independently determine whether the work is complete."
 
