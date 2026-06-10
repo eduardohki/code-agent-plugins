@@ -8,7 +8,7 @@
 3. [common-pitfalls.md](common-pitfalls.md)
 
 **Read when you reach the relevant step:**
-4. [review-examples.md](../assets/review-examples.md) - Read before producing findings (Step 4) or evaluating authorship-specific failure modes (Step 3). Contains worked examples of findings, rewrites, and annotated AI- and human-authorship failure modes.
+4. [review-examples.md](review-examples.md) - Read before producing findings (Step 4) or evaluating authorship-specific failure modes (Step 3). Contains worked examples of findings, rewrites, and annotated AI- and human-authorship failure modes.
 
 **Read situationally:**
 5. [adapting-to-your-context.md](adapting-to-your-context.md) - Read when the requirements under review come from an org that does not practice the ideal ceremonies, or when the user is reviewing alone without access to the original author or other audiences. Explains how to adjust the review stance and what to do with findings when you cannot hand them back to a formal refinement process.
@@ -27,6 +27,8 @@ The user has existing requirements they want evaluated. These may be:
 The review applies the same quality bar regardless of who authored the requirements (human or AI) or what format they're in. The goal is to produce clear, actionable feedback that helps improve them.
 
 ## Process
+
+**Pacing:** follow the Conversation Style rules from SKILL.md throughout. Each step's *Why this step matters* note is user-facing - share it briefly as the step begins. For inputs larger than about five stories, review in chunks: present findings for one section, check in, continue.
 
 ## Step 1: Receive the requirements
 
@@ -123,7 +125,7 @@ Evaluate each requirement (or story, or feature description) against the quality
 - **Anchoring on the first idea:** every story descends from the first framing; no scenario challenges the original stakeholder's premise. Check: look for negative space - what was never asked?
 - **Absent user:** the feature is described from the system's perspective; every Then is a UI state or data change, with no human interpretation or judgment. Check: does any scenario reflect what a real person would *think* when this happens?
 
-Read the `<ai-authorship-examples>` and `<human-authorship-examples>` sections in [review-examples.md](../assets/review-examples.md) for annotated examples of each failure mode in real requirements.
+Read the `<ai-authorship-examples>` and `<human-authorship-examples>` sections in [review-examples.md](review-examples.md) for annotated examples of each failure mode in real requirements.
 
 ## Step 4: Produce findings
 
@@ -141,15 +143,22 @@ Organize findings by severity:
 - **Major:** Missing edge cases, vague non-functional requirements, horizontal slicing, hidden assumptions. Work can start but will likely hit problems.
 - **Minor:** Imperative phrasing, formatting issues, criteria that could be slightly more specific. Improve if time permits.
 
-Read the `<sample-findings>` section in [review-examples.md](../assets/review-examples.md) for a worked example showing findings at each severity level with concrete rewrites.
+Read the `<sample-findings>` section in [review-examples.md](review-examples.md) for a worked example showing findings at each severity level with concrete rewrites.
+
+**Volume control - findings must inform, not bury:**
+
+- **Lead with the verdict.** Present the Step 6 summary (counts + Definition of Ready call) *before* the detailed findings, so the user gets the decision first and the evidence second.
+- **Group repeated findings.** "8 of 12 stories have no NFRs" is one finding with a list of affected stories, not eight findings. A grouped finding teaches the pattern; eight copies bury it.
+- **Top findings in full, the rest on request.** Present the 3-5 most consequential findings with the full what / why / what-instead structure. List the remainder as one line each and offer detail on request.
+- **Long reviews go to a file.** If the full findings list is long, write it to a file (offer `docs/reviews/<name>.md` or alongside the source document) and keep chat to the verdict, the top findings, and next steps.
 
 ## Step 5: Provide a rewritten version
 
 *Why this step matters: showing what "good" looks like for the user's specific requirement is worth more than any amount of general advice. It converts the review from a grading exercise into a collaborative improvement.*
 
-For requirements with Critical or Major findings, provide a rewritten version that addresses the issues. This demonstrates what the improved requirement looks like, not just what was wrong.
+For requirements with Critical or Major findings, provide one or two **exemplar rewrites** - pick the findings whose correction teaches the most transferable pattern. Showing the pattern once teaches more than rewriting everything; an exhaustive rewrite reads as grading, an exemplar reads as teaching. Then offer to rewrite the remainder on request, or to apply the rewrites directly to the source file or document the user provided.
 
-For the rewrite:
+For each rewrite:
 - Add value statements where missing
 - Convert imperative criteria to declarative
 - Add edge case scenarios
@@ -159,6 +168,8 @@ For the rewrite:
 ## Step 6: Summary verdict
 
 *Why this step matters: the verdict converts a list of findings into a decision - start work, rework first, or go back to discovery. Without it the user is left with a pile of issues and no direction.*
+
+Per the volume-control rule in Step 4, the verdict is *presented* before the detailed findings even though it is *produced* after the evaluation. Use this step to confirm or revise it once rewrites are done - do not repeat it verbatim at the end.
 
 Provide an overall assessment:
 
@@ -190,6 +201,6 @@ This workflow is complete when:
 - [ ] Authorship-specific checks applied: AI checks when AI-authored, human checks always
 - [ ] Each finding includes what's wrong, why it matters, and what to do instead
 - [ ] Findings are organized by severity (critical/major/minor)
-- [ ] Rewritten versions provided for critical and major findings
+- [ ] Exemplar rewrites provided for the most instructive critical/major findings, remainder offered on request
 - [ ] Overall verdict states whether requirements meet Definition of Ready
 - [ ] User has received actionable, specific feedback (not vague "needs improvement")

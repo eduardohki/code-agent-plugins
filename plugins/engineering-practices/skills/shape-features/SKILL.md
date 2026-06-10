@@ -23,43 +23,49 @@ Guided workflow for producing, auditing, or learning about software requirements
 | Audit or review existing requirements | [review-existing-workflow.md](references/review-existing-workflow.md) |
 | Learn what good requirements look like | [learn-the-practice-workflow.md](references/learn-the-practice-workflow.md) |
 
-| Reference | When to load |
-|-----------|--------------|
-| [essential-principles.md](references/essential-principles.md) | Required for every workflow |
-| [worked-example.md](assets/worked-example.md) | Before producing output |
-| [adapting-to-your-context.md](references/adapting-to-your-context.md) | User's org lacks the ideal ceremonies |
-| [known-limitations.md](references/known-limitations.md) | Feature may fall outside the skill's defaults |
+Each workflow opens with its own Required Reading section; the full reference list with loading guidance is in the Reference Index below.
 
-## Intake
+## Intake & Routing
 
-What would you like to do?
+**Route directly when intent is clear from the user's message - do not present the menu first:**
 
-1. **Shape a new feature** - collect and structure its requirements
-2. **Review/audit** existing requirements
-3. **Learn** what good requirements look like (and common pitfalls)
+- User pastes requirements or a feature spec → [review-existing-workflow.md](references/review-existing-workflow.md)
+- User describes a feature they want to build → [shape-new-feature-workflow.md](references/shape-new-feature-workflow.md)
+- User asks "what makes good requirements" or similar → [learn-the-practice-workflow.md](references/learn-the-practice-workflow.md)
+- User provides meeting notes or a product brief → shape-new-feature workflow (treat as input material)
+- User has a feature in production and wants to refine the next iteration → review workflow (audit first, then re-plan)
 
 The user may arrive with meeting notes, product briefs, external documentation, or a rough feature idea. All starting points are valid - the skill steers toward quality regardless of where the input came from.
 
-*Not sure which applies?* Starting fresh on a new feature → 1. Already have stories / a PRD / backlog items you want checked → 2. No specific feature yet, want to understand the practice first → 3.
+**Only when intent is genuinely ambiguous**, present the menu and wait for a response before proceeding:
 
-**Wait for response before proceeding.**
-
-## Routing
+> What would you like to do?
+>
+> 1. **Shape a new feature** - collect and structure its requirements
+> 2. **Review/audit** existing requirements
+> 3. **Learn** what good requirements look like (and common pitfalls)
+>
+> *Not sure which applies?* Starting fresh on a new feature → 1. Already have stories / a PRD / backlog items you want checked → 2. No specific feature yet, want to understand the practice first → 3.
 
 | Response | Next Action | Workflow |
 |----------|-------------|----------|
-| 1, "shape", "collect", "new", "feature", "write", "create", "define" | Proceed directly | [shape-new-feature-workflow.md](references/shape-new-feature-workflow.md) |
+| 1, "shape", "collect", "new", "feature" | Proceed directly | [shape-new-feature-workflow.md](references/shape-new-feature-workflow.md) |
 | 2, "review", "audit", "check", "existing", "evaluate", "assess" | Ask user to provide their requirements | [review-existing-workflow.md](references/review-existing-workflow.md) |
-| 3, "learn", "understand", "teach", "pitfalls", "good", "practices" | Proceed directly | [learn-the-practice-workflow.md](references/learn-the-practice-workflow.md) |
+| 3, "learn", "understand", "teach", "pitfalls", "practices" | Proceed directly | [learn-the-practice-workflow.md](references/learn-the-practice-workflow.md) |
 
-**Intent-based routing (if user provides clear intent without selecting a number):**
-- User pastes requirements or a feature spec → route to review workflow
-- User describes a feature they want to build → route to shape-new-feature workflow
-- User asks "what makes good requirements" or similar → route to learn workflow
-- User provides meeting notes or a product brief → route to shape-new-feature workflow (treat as input material)
-- User has a feature in production and wants to refine the next iteration → route to review workflow (audit first, then re-plan)
+**Non-interactive use:** if invoked by another agent, or in a context where no one can answer questions, skip the menu entirely, route by intent, and record every assumption you would otherwise have asked about in the output's Assumptions section.
 
 **After reading the workflow, follow it exactly.**
+
+## Conversation Style
+
+This skill is an invitation to learn: the user should come away understanding *why* each practice exists, not just complying with it. Walls of text defeat that goal - a lecture delivered in one message gets skimmed, not learned. These rules apply to every workflow:
+
+- **One step per message.** Each workflow step's *Why this step matters* note is user-facing - share it in one or two sentences at the moment the step begins, attached to the question or action it motivates. Never recite the rationale for several steps in a single message.
+- **Ask at most two questions per turn.** The workflows list more questions per step than fit in one message; spread them across turns and skip any the input already answers.
+- **Depth is pull-based.** Give the short why always; offer the expanded version ("want the economics behind the 2-day rule?") instead of pre-emptively explaining everything. An invitation can be accepted or declined - that is what makes it an invitation.
+- **Artifacts go to files, conversation stays in chat.** Write specs, full reviews, and rewrites to a file; in chat, summarize and ask the next question. Never combine a long artifact with a list of questions in one message.
+- **Checkpoint between chunks.** When teaching or reviewing multiple items, pause after each chunk and check in before continuing.
 
 ## When Not to Use
 
@@ -75,9 +81,7 @@ If in doubt, ask the user which of the three workflows they want before routing.
 
 ## Shared Principles
 
-**REQUIRED READING for every workflow:** [essential-principles.md](references/essential-principles.md) - five non-negotiable principles that govern all three workflows.
-
-**The load-bearing test (memorize this):** A requirement is well-written when every consumer - product owner, developer, tester, AI agent, plus the people who pay for our mistakes (operators, security, end-users, downstream teams) - can read it and independently determine whether the work is complete. If any one of them can't, the requirement needs more work. See [essential-principles.md](references/essential-principles.md) for the full audience list and when each applies.
+**REQUIRED READING for every workflow:** [essential-principles.md](references/essential-principles.md) - five non-negotiable principles, the multi-audience test (the skill's load-bearing check), and a curiosity table of common rationalizations.
 
 ## Reference Index
 
@@ -91,16 +95,8 @@ All domain knowledge in `references/`:
 **Anti-patterns:** [common-pitfalls.md](references/common-pitfalls.md)
 **Acceptance criteria:** [bdd-and-acceptance-criteria.md](references/bdd-and-acceptance-criteria.md) - Leads with the three questions behind every scenario (Given / When / Then as interrogation, not syntax).
 **Sizing and decomposition:** [story-slicing-and-sizing.md](references/story-slicing-and-sizing.md) - The 2-day rule framed as economics (be wrong cheaply), not doctrine.
-**Worked example:** [worked-example.md](assets/worked-example.md) - A fully filled feature requirements template. Read when producing output or when you need a reference for what "good" looks like.
-**Review examples:** [review-examples.md](assets/review-examples.md) - Sample findings and rewrites, plus annotated AI-authorship AND human-authorship failure modes. Read during the review workflow.
-
-## Workflows
-
-| Workflow | Purpose |
-|----------|---------|
-| [shape-new-feature-workflow.md](references/shape-new-feature-workflow.md) | Guided conversation to produce well-formed requirements from any input |
-| [review-existing-workflow.md](references/review-existing-workflow.md) | Structured audit of requirements against quality standards |
-| [learn-the-practice-workflow.md](references/learn-the-practice-workflow.md) | Educational walkthrough with examples, pitfalls, and reasoning |
+**Worked example:** [worked-example.md](references/worked-example.md) - A fully filled feature requirements template. Read when producing output or when you need a reference for what "good" looks like.
+**Review examples:** [review-examples.md](references/review-examples.md) - Sample findings and rewrites, plus annotated AI-authorship AND human-authorship failure modes. Read during the review workflow.
 
 ## Assets
 

@@ -46,6 +46,6 @@ Short definitions for terms used throughout this skill. Consult this file if any
 
 ## Authoring & review
 
-- **AI-authored requirement** - A requirement generated or drafted by an AI agent. Always subject to human review per this skill's guidance; see [review-examples.md](../assets/review-examples.md) and the AI-specific checks in the review workflow.
+- **AI-authored requirement** - A requirement generated or drafted by an AI agent. Always subject to human review per this skill's guidance; see [review-examples.md](review-examples.md) and the AI-specific checks in the review workflow.
 - **Rationalization** - A plausible-sounding excuse for skipping a principle ("this one is small enough", "we can add edge cases later"). See the rationalization table in [essential-principles.md](essential-principles.md).
 

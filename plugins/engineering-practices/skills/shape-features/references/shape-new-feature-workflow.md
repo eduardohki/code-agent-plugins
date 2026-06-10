@@ -2,14 +2,14 @@
 
 ## Required Reading
 
-**Read these reference files NOW before proceeding:**
+**Read this reference file NOW before proceeding:**
 1. [essential-principles.md](essential-principles.md) - the five non-negotiable principles for this skill
-2. [what-good-looks-like.md](what-good-looks-like.md)
-3. [bdd-and-acceptance-criteria.md](bdd-and-acceptance-criteria.md)
-4. [story-slicing-and-sizing.md](story-slicing-and-sizing.md)
 
-**Read when you reach the relevant step:**
-5. [worked-example.md](../assets/worked-example.md) - Read before Step 6 (slicing) or at the latest before Step 9 (producing output). Shows the expected quality bar for every section of the output template.
+**Read when you reach the relevant step (just-in-time, not upfront - keep the conversation light until the content is needed):**
+2. [bdd-and-acceptance-criteria.md](bdd-and-acceptance-criteria.md) - Read before Step 4 (writing scenarios).
+3. [story-slicing-and-sizing.md](story-slicing-and-sizing.md) - Read the `<edge-case-mapping>` section when you reach Step 4 (it holds the edge-case checklist); read the full file before Step 6 (slicing).
+4. [what-good-looks-like.md](what-good-looks-like.md) - Read before Step 8 (quality gate).
+5. [worked-example.md](worked-example.md) - Read before Step 6 (slicing) or at the latest before Step 9 (producing output). Shows the expected quality bar for every section of the output template.
 
 **Read situationally:**
 6. [adapting-to-your-context.md](adapting-to-your-context.md) - Read when the user signals their org does not practice these ceremonies (no three amigos, no DoR, no 2-day delivery, no Gherkin tooling), or is working alone in a less-mature context. Explains how to adapt notation, sign-off, and hand-offs without losing the underlying principles.
@@ -27,6 +27,8 @@ The user wants to produce well-formed requirements for a new feature. They may a
 All starting points are valid. This workflow steers toward quality requirements regardless of where the input came from. The user may be a product owner, business analyst, developer, tester, or an AI agent operating on behalf of one of these roles.
 
 ## Process
+
+**Pacing:** follow the Conversation Style rules from SKILL.md throughout. Each step's *Why this step matters* note is user-facing - share it briefly as the step begins, woven into what you ask, one step at a time. Steps 2-7 list more questions than fit in one message; spread them over turns, ask at most two at a time, and skip what the input already answers.
 
 ## Step 1: Triage the input material
 
@@ -172,6 +174,8 @@ Each story after slicing must still have:
 
 For the economics behind the 2-day rule, worked examples of vertical vs. horizontal slicing, INVEST, and the dependency math (1 in 2^n), see [story-slicing-and-sizing.md](story-slicing-and-sizing.md).
 
+**Cap the elaboration, not the slicing.** If slicing yields more than three stories, fully elaborate the first one to three (highest value or highest risk first) and capture the rest as named slices with a one-line scope each. The deferred slices get elaborated just in time, when the team is about to pick them up - elaborating ten stories upfront violates principle #5 and produces a document nobody reads.
+
 ## Step 7: Surface risks, unknowns, and assumptions
 
 *Why this step matters: assumptions presented as facts are the most common cause of late rework. Naming them converts hidden risk into tracked risk - and some assumptions, once stated aloud, turn out to be wrong.*
@@ -226,14 +230,24 @@ If any item fails in either mode, loop back to the relevant step and address it.
 
 If the user provided only a vague feature name and skipped through the conversation steps without substantive answers, do NOT fill the template. Loop back to the first unanswered question. A filled template without understood behaviors behind it is worse than no template - it creates false confidence that requirements are "done" when they haven't been explored.
 
-If genuine discovery has happened, produce the output using [feature-requirements.md](../assets/feature-requirements.md). The template includes two load-bearing sections that are easy to skip and expensive to miss:
+If genuine discovery has happened, produce the output using [feature-requirements.md](../assets/feature-requirements.md).
+
+**Write the document to a file, not into the chat.** Ask the user where it should live; if they have no preference, default to `docs/requirements/<feature-name>.md` in the repository (or the current directory when there is no repo). A spec in version control can be diffed, reviewed, and revisited; a spec in chat scrollback cannot - and requirements that outlive memory are the point (principle #1). In chat, present only:
+
+- A one-line summary per story (name + behavior)
+- The open risks, assumptions, and spikes
+- The confirmation questions below
+
+Offer a section-by-section walkthrough of the file for users who want to review interactively - that walkthrough is a better teaching moment than a full-document dump.
+
+The template's HTML comments are authoring guidance for you - do not copy them into the delivered document. The template includes two load-bearing sections that are easy to skip and expensive to miss:
 
 - The **Participants & Decisions** table at the top - who was in the conversation, what they pushed back on, what was deferred. Fill this in even if the user is the only participant (in that case, the table has one row and the sign-off mode is `Self-reviewed`). Six months from now, this table is the only thread into why specific decisions were made.
 - The **Multi-audience sign-off** at the bottom - fill the checkboxes honestly. The core four (PO, dev, tester, AI agent) are always required; the second group (operator/support, security/privacy, end-user, downstream teams) must be checked *or* explicitly struck-through with a reason.
 
-Read [worked-example.md](../assets/worked-example.md) for a fully filled example showing the expected quality bar for every section.
+Read [worked-example.md](worked-example.md) for a fully filled example showing the expected quality bar for every section.
 
-Present the completed requirements to the user and ask:
+Then share the chat summary described above (story one-liners, open risks and assumptions, where the file was written) and ask:
 - "Does this capture the behaviors you described?"
 - "Are there scenarios we missed?"
 - "Are there any assumptions here that you know the answer to?"
@@ -262,5 +276,5 @@ This workflow is complete when:
 - [ ] Stories are vertically sliced
 - [ ] Risks, unknowns, and assumptions are surfaced
 - [ ] Every story passes the multi-audience test
-- [ ] Output uses the feature requirements template
+- [ ] Output uses the feature requirements template and was written to a file (chat got the summary, not the document)
 - [ ] User has reviewed and confirmed the requirements

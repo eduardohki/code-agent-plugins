@@ -89,17 +89,17 @@ skills/shape-features/
 │   ├── what-good-looks-like.md       # Quality characteristics + checklist
 │   ├── common-pitfalls.md            # Anti-patterns + red-flag phrases
 │   ├── bdd-and-acceptance-criteria.md # Three questions (Given/When/Then) framed as interrogation, not syntax
-│   └── story-slicing-and-sizing.md   # 2-day rule framed as economics (be wrong cheaply); vertical slicing
+│   ├── story-slicing-and-sizing.md   # 2-day rule framed as economics (be wrong cheaply); vertical slicing
+│   ├── worked-example.md             # Fully filled feature-requirements template, incl. participants & sign-off
+│   └── review-examples.md            # Findings, rewrites, AI-authorship AND human-authorship failure modes
 └── assets/
-    ├── feature-requirements.md       # Output structure: Participants, multi-audience sign-off
-    ├── worked-example.md             # Fully filled feature-requirements template, incl. participants & sign-off
-    └── review-examples.md            # Findings, rewrites, AI-authorship AND human-authorship failure modes
+    └── feature-requirements.md       # Output structure: Participants, multi-audience sign-off
 ```
 
-Uses the router pattern: SKILL.md asks what the user wants to do and routes to the appropriate workflow. Each workflow declares its own `<required-reading>` - always including `references/essential-principles.md`, plus the domain references relevant to that workflow. This keeps any single file focused, keeps the essential principles load-on-demand rather than on every SKILL.md read, and ensures the right context is loaded for the task at hand.
+Uses the router pattern: SKILL.md routes to the appropriate workflow by intent (asking only when intent is ambiguous). Each workflow opens with a Required Reading section - always including `references/essential-principles.md`, plus the domain references relevant to that workflow, loaded just-in-time at the step that needs them. This keeps any single file focused, keeps the essential principles load-on-demand rather than on every SKILL.md read, and ensures the right context is loaded for the task at hand.
 
 A `references/glossary.md` is included as a plain-language reference for recurring terms (BDD, Gherkin, INVEST, spike, DoR, vertical slice, etc.). Workflows do not define these terms inline - the glossary is the backstop for anyone who needs one.
 
-`references/adapting-to-your-context.md` is loaded situationally - when a user signals they are operating alone inside an organisation that does not practice the ideal ceremonies (no three amigos, no DoR, no 2-day delivery, no Gherkin tooling). The skill's goal is to help that individual practitioner learn and improve *their* practice, not to reorganise their company. This reference explains how the principles travel without the ceremonies, introduces a `self-reviewed` sign-off mode for when real audiences are unreachable, gives guidance for hand-offs, spikes, and refinement in the real world, and closes with an honest exit clause for when the lone-practitioner mode stops being sustainable. It is referenced from each workflow's `<required-reading>` as situational reading.
+`references/adapting-to-your-context.md` is loaded situationally - when a user signals they are operating alone inside an organisation that does not practice the ideal ceremonies (no three amigos, no DoR, no 2-day delivery, no Gherkin tooling). The skill's goal is to help that individual practitioner learn and improve *their* practice, not to reorganise their company. This reference explains how the principles travel without the ceremonies, introduces a `self-reviewed` sign-off mode for when real audiences are unreachable, gives guidance for hand-offs, spikes, and refinement in the real world, and closes with an honest exit clause for when the lone-practitioner mode stops being sustainable. It is referenced from each workflow's Required Reading section as situational reading.
 
 `references/known-limitations.md` is the skill's honesty file - the list of contexts where its own advice is known to be incomplete, wrong, or actively unhelpful (regulated/contractually-fixed domains, platform work, discovery phases, authority mismatches, environments where the skill is being gamed, domains outside the English-speaking tech idiom). It is loaded situationally, when a user's situation looks like it may fall outside what the skill handles well. A skill that knows its own edges is more trustworthy than one that pretends to have none.

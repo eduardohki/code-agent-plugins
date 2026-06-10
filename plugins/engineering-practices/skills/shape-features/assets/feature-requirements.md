@@ -1,10 +1,17 @@
-<!-- For a fully worked example of this template, read [worked-example.md](worked-example.md) -->
+<!-- For a fully worked example of this template, read ../references/worked-example.md.
+HTML comments throughout this template are authoring guidance: use them while filling the
+document in, but do NOT copy them (or expand them into prose) in the delivered document. -->
 
 # Feature: [Name]
 
 ## Participants & Decisions
 
-**Why this section exists:** requirements age, but the conversation that produced them ages faster. Six months from now, when someone reads this spec and wonders why a specific edge case was chosen, this table is the thread to pull. Fill it in even if you are the only participant - especially if you are the only participant.
+<!-- Authoring guidance: requirements age, but the conversation that produced them ages faster.
+Six months from now, when someone reads this spec and wonders why a specific edge case was
+chosen, this table is the thread to pull. Fill it in even if you are the only participant -
+especially if you are the only participant. -->
+
+*This table is the thread back into why decisions were made.*
 
 | Participant | Role | Present for | What they pushed back on | What was deferred |
 |---|---|---|---|---|
@@ -14,7 +21,8 @@
 **Author (who drafted this document):**
 **Stakeholders consulted (not in the room, but whose views are reflected):**
 
-If this row has one entry and it is you, mark the sign-off at the bottom as `Self-reviewed` and flag the trust level explicitly in Risks & Unknowns.
+<!-- Authoring guidance: if the participants table has one entry and it is you, mark the
+sign-off at the bottom as `Self-reviewed` and flag the trust level explicitly in Risks & Unknowns. -->
 
 ## Problem Statement
 
@@ -127,7 +135,13 @@ This is THE test for requirements quality. For every story above, confirm each a
 
 **The people who pay for our mistakes - check the ones that apply to this feature:**
 
-These audiences are rarely in the room when requirements are written, but they discover the consequences. You do not need a signature from them on every story. You need the *question they would ask* to have been asked by someone, and the answer to be visible here. For each, confirm that someone on the authoring team has genuinely considered the perspective - not just noted it as boilerplate.
+<!-- Authoring guidance: these audiences are rarely in the room when requirements are written,
+but they discover the consequences. You do not need a signature from them on every story. You
+need the question they would ask to have been asked by someone, and the answer to be visible
+here. For each, confirm that someone on the authoring team has genuinely considered the
+perspective - not just noted it as boilerplate. -->
+
+*These audiences are rarely in the room, but they discover the consequences. Their question must have been asked by someone.*
 
 - [ ] **Operator / support** - When this feature misbehaves in production, can the person on-call diagnose it from what this feature emits (logs, metrics, error messages)? Is there a runbook entry or does this create a new "page an engineer" case?
 - [ ] **Security / privacy** - Is the data flow here one that security and privacy partners would sign off on if asked? Are there new categories of sensitive data, new authorisation boundaries, new audit requirements, new attack surface?

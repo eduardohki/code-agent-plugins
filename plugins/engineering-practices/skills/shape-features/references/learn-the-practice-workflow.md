@@ -38,15 +38,18 @@ Ask the user:
 
 "What would you like to focus on?"
 
-1. **The full picture** - Walk through everything: what good looks like, common pitfalls, BDD, and slicing
+1. **The full picture** - Walk through everything: what good looks like, common pitfalls, BDD, slicing, and the multi-audience test
 2. **Common pitfalls** - What goes wrong with requirements and why
 3. **Writing acceptance criteria** - How to use BDD and Given/When/Then effectively
 4. **Slicing and sizing** - How to make stories small enough to deliver rapidly
-5. **Something specific** - Ask me a question
+5. **How different audiences read a requirement** - The multi-audience perspective
+6. **Something specific** - Ask me a question
 
 If the user already stated a specific interest (e.g., "teach me about BDD"), skip this question and go to the relevant section.
 
 ## Step 2: Deliver the content
+
+**Pacing (non-negotiable in this workflow):** deliver one characteristic, pitfall, or sub-topic per message - at most a cluster of two or three when they are closely related. End each chunk with a brief check-in ("Clear so far?" / "Want to see this one in your own domain?") before continuing. Depth is pull-based: give the short version, offer the expansion. A full topic delivered in one message is not teaching; it is scrolling.
 
 For each topic, follow this teaching structure:
 
@@ -60,7 +63,7 @@ The "why" is the most important part. Anyone can memorize a list of do's and don
 
 ### Topic A: What good requirements look like
 
-Walk through the 10 characteristics from [what-good-looks-like.md](what-good-looks-like.md). For each one, give a brief concrete example.
+Walk through the 10 characteristics from [what-good-looks-like.md](what-good-looks-like.md), in clusters of two or three per message with a check-in between clusters. For each one, give a brief concrete example.
 
 Anchor with the multi-audience test: "A requirement is well-written when any consumer - product owner, developer, tester, AI agent - can independently determine whether the work is complete."
 

@@ -197,35 +197,7 @@ Catalog the most common ways requirements go wrong, explain WHY each pitfall cau
 - **Why it hurts:** AI-generated requirements have predictable failure modes. They tend to be plausible-sounding but vague on genuine edge cases. Happy and unhappy paths often feel like mirror images rather than scenarios derived from real-world understanding. The AI fills in blanks with reasonable-sounding assumptions that nobody actually validated. Format quality masks content gaps. The most dangerous AI-generated requirement is the one that reads so well that nobody questions it.
 - **What to do instead:** Apply the same review workflow to AI-authored requirements as to human-authored ones - and be MORE skeptical of completeness. Specifically check: Are the edge cases genuine or formulaic? Do the unhappy paths reflect real failure modes or just inverted happy paths? Are the non-functional requirements specific or generic? Are there assumptions the AI made that need human verification? Run every AI-generated requirement through the multi-audience test.
 
-  **Example - AI-generated requirement with annotated failure modes:**
-
-  Prompt to AI: "Write a user story for a document upload feature."
-
-  AI output:
-  ```
-  As a user, I want to upload documents so that I can attach them to my account.
-
-  Scenario: Successful upload
-    Given I am logged in
-    When I upload a valid document
-    Then the document is stored and I see a success message
-
-  Scenario: Failed upload
-    Given I am logged in
-    When I upload an invalid document
-    Then I see an error message
-
-  NFRs:
-  - Performance: Uploads should be handled efficiently
-  - Security: Documents should be stored securely
-  - The system supports files up to 25MB
-  ```
-
-  What to catch:
-  - **Formulaic edge cases:** "Failed upload" is just the happy path inverted. What's an "invalid document"? Too large? Wrong type? Corrupted? Password-protected PDF? Each is a different scenario with a different expected behavior. A real edge case would be: network drops mid-upload, the account is locked, or concurrent uploads of the same file.
-  - **Plausible-sounding vagueness:** "Efficiently" and "securely" sound like NFRs but commit to nothing. What response time? Encrypted at rest? Virus-scanned? Subject to a retention schedule?
-  - **Assumption backfill:** Where did "25MB" come from? Nobody specified a limit. The AI picked a plausible number and presented it as a requirement.
-  - **Missing "I don't know":** No mention of allowed document types (PDF, JPEG, TIFF?), who can view uploaded documents (the uploader only? administrators too?), or whether documents must be linked to a specific record. A human would flag these as open questions. The AI presented everything as settled.
+  **Example:** read the annotated document-upload example in the `<ai-authorship-examples>` section of [review-examples.md](review-examples.md). It shows all four failure modes (formulaic edge cases, plausible-sounding vagueness, assumption backfill, missing "I don't know") in a single AI-generated requirement, with the genuine scenarios each one hides.
 
 </pitfalls>
 
