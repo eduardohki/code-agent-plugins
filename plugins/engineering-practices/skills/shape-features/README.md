@@ -38,7 +38,7 @@ All three workflows share the same delivery stance: the skill is an invitation t
 
 ## The thinking behind it
 
-The practices in this skill are grounded in established software delivery thinking - particularly around Behavior Driven Development, continuous delivery, work decomposition, and flow optimization. Key sources include the Dojo Consortium's published guidance on work decomposition, BDD, story slicing, and delivery metrics, as well as the broader body of work on specification by example, acceptance test driven development, and small-batch delivery.
+The practices in this skill are grounded in established software delivery thinking - particularly around Behavior Driven Development, continuous delivery, work decomposition, and flow optimization. Key sources include the [Dojo Consortium](https://dojoconsortium.org/)'s published guidance on work decomposition, BDD, story slicing, and delivery metrics, as well as the broader body of work on specification by example, acceptance test driven development, and small-batch delivery.
 
 The core beliefs:
 
