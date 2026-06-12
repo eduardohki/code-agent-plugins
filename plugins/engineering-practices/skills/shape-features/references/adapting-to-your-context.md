@@ -17,7 +17,7 @@ The *ceremonies* in this skill - Gherkin notation, "three amigos" meetings, Defi
 
 ## Notation is flexible; concreteness is not
 
-The template uses Gherkin because it is unambiguous, readable by all four audiences, and easy to turn into tests. But if your team writes acceptance criteria as Jira bullet lists, paste the scenarios as bullet points. If your team uses free-text paragraphs, write free-text paragraphs that are **specific and verifiable**. The form does not matter; the substance does.
+The template uses Gherkin because it is unambiguous, readable by all four audiences, and easy to turn into tests. But if your team writes acceptance criteria as bullet lists in a tracker, paste the scenarios as bullet points. If your team uses free-text paragraphs, write free-text paragraphs that are **specific and verifiable**. The form does not matter; the substance does.
 
 **Good bullet list:**
 - When a registered user submits the correct credentials, they are taken to their account home page.

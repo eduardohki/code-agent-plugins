@@ -30,9 +30,11 @@ Three workflows:
 
 1. **Shape a new feature** - Guides a conversation to produce well-formed requirements for a new feature, starting from any input (a rough idea, meeting notes, a product brief, a stakeholder request). Triages input quality first, then works through value, behaviors, acceptance criteria, edge cases, non-functional requirements, slicing, and risk - and closes with concrete next-step suggestions (a review pass, relevant downstream engineering skills, or spikes for open unknowns).
 
-2. **Review existing** - Audits existing requirements against a quality standard. Produces structured findings with severity levels, explains why each gap matters, and provides rewritten versions. Includes specific checks for AI-authored requirements, and closes with an explicit recommendation: rework via the `shape-new-feature` workflow, revise inline, or proceed to implementation with the right downstream skill.
+2. **Review existing** - Audits existing requirements against a quality standard. Leads with a verdict, then walks through findings one at a time - what's wrong, why it matters, what to do instead - applying accepted rewrites directly to the source document. Includes specific checks for AI-authored requirements, and closes with an explicit recommendation: rework via the `shape-new-feature` workflow, revise inline, or proceed to implementation with the right downstream skill.
 
 3. **Learn the practice** - Educational walkthrough of what good requirements look like, common pitfalls, and the reasoning behind the practices. Uses concrete examples and shows how the same requirement reads to different audiences. Offers to transition into the `shape-new-feature` or `review-existing` workflow once the user wants to apply what they learned.
+
+All three workflows share the same delivery stance: the skill is an invitation to learn, so the reasoning behind each step is shared in small doses, attached to the question or finding it motivates - never as a lecture. Depth is offered rather than imposed, artifacts (specs, full reviews) go to files while the chat stays conversational, and the workflows check in between chunks instead of pushing on. A wall of text is treated as a delivery defect, not as thoroughness.
 
 ## The thinking behind it
 

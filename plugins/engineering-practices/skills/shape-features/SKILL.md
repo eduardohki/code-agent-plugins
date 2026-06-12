@@ -29,7 +29,7 @@ Each workflow opens with its own Required Reading section; the full reference li
 
 **Route directly when intent is clear from the user's message - do not present the menu first:**
 
-- User pastes requirements or a feature spec → [review-existing-workflow.md](references/review-existing-workflow.md)
+- User pastes requirements or a feature spec, or links to one → [review-existing-workflow.md](references/review-existing-workflow.md)
 - User describes a feature they want to build → [shape-new-feature-workflow.md](references/shape-new-feature-workflow.md)
 - User asks "what makes good requirements" or similar → [learn-the-practice-workflow.md](references/learn-the-practice-workflow.md)
 - User provides meeting notes or a product brief → shape-new-feature workflow (treat as input material)

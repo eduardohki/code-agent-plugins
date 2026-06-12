@@ -21,6 +21,7 @@ The user wants to produce well-formed requirements for a new feature. They may a
 - A rough feature idea ("we need a search function")
 - Meeting notes or transcripts
 - A product brief or PRD
+- An epic, ticket, or wiki page - fetch it yourself when the user provides a link or ID and a connected tool can read it
 - External documentation or competitor analysis
 - Input from stakeholders that needs structuring
 
@@ -117,7 +118,7 @@ If behaviors are unclear or the user is describing implementation ("add a dropdo
 
 *Why this step matters: scenarios are the only form of acceptance criteria that every consumer - PO, dev, tester, AI agent - can independently verify (principle #2, the multi-audience test). Vague criteria mean each consumer fills the gaps differently, and the gaps show up as bugs or rework.*
 
-**Notation is flexible, concreteness is not.** The examples in this skill use Gherkin (`Given / When / Then`) because it is unambiguous and readable by all four audiences. If the user's team writes acceptance criteria as Jira bullet lists, free-text paragraphs, or any other format, adapt the notation to match - what matters is that each scenario is specific and verifiable, not the syntax. See [adapting-to-your-context.md](adapting-to-your-context.md) for an example of BDD-in-bullets that carries the same substance.
+**Notation is flexible, concreteness is not.** The examples in this skill use Gherkin (`Given / When / Then`) because it is unambiguous and readable by all four audiences. If the user's team writes acceptance criteria as bullet lists in their tracker, free-text paragraphs, or any other format, adapt the notation to match - what matters is that each scenario is specific and verifiable, not the syntax. See [adapting-to-your-context.md](adapting-to-your-context.md) for an example of BDD-in-bullets that carries the same substance.
 
 For each behavior identified in Step 3, write concrete scenarios using Given/When/Then (or the equivalent structure in whatever notation the team uses).
 
@@ -232,13 +233,15 @@ If the user provided only a vague feature name and skipped through the conversat
 
 If genuine discovery has happened, produce the output using [feature-requirements.md](../assets/feature-requirements.md).
 
-**Write the document to a file, not into the chat.** Ask the user where it should live; if they have no preference, default to `docs/requirements/<feature-name>.md` in the repository (or the current directory when there is no repo). A spec in version control can be diffed, reviewed, and revisited; a spec in chat scrollback cannot - and requirements that outlive memory are the point (principle #1). In chat, present only:
+**Write the document to a file, not into the chat.** Ask the user where it should live; if they have no preference, default to `docs/requirements/<feature-name>.md` in the project - the repository when there is one, otherwise the working folder. A spec in a file can be reviewed, revisited, shared, and versioned where version control exists; a spec in chat scrollback cannot - and requirements that outlive memory are the point (principle #1). In chat, present only:
 
 - A one-line summary per story (name + behavior)
 - The open risks, assumptions, and spikes
 - The confirmation questions below
 
 Offer a section-by-section walkthrough of the file for users who want to review interactively - that walkthrough is a better teaching moment than a full-document dump.
+
+If the team's requirements live in a tracker or wiki and a connected tool can write there, offer to publish the spec there as well - but only after the user has reviewed and confirmed the file, and confirm the publish step itself: it lands in a shared system other people are watching. The local file remains the working draft.
 
 The template's HTML comments are authoring guidance for you - do not copy them into the delivered document. The template includes two load-bearing sections that are easy to skip and expensive to miss:
 
